@@ -35,12 +35,12 @@ export default function Navbar() {
             评价初中老师
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover:text-accent transition-colors"
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition-colors"
               >
                 {item.label}
               </Link>
@@ -48,7 +48,7 @@ export default function Navbar() {
             {currentUser && (currentUser.role === "admin" || currentUser.role === "moderator") && (
               <Link
                 href="/admin"
-                className="hover:text-accent transition-colors"
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-primary-foreground/10 transition-colors"
               >
                 管理后台
               </Link>
