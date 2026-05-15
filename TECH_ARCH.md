@@ -169,6 +169,54 @@ const deleteReview = useCallback((reviewId: string) => {
 }, [currentUser])
 ```
 
+## 科目常量
+
+位于 `src/constants/index.ts`：
+
+```typescript
+export const SUBJECTS = [
+  { id: "chinese", label: "语文" },
+  { id: "math", label: "数学" },
+  { id: "english", label: "英语" },
+  { id: "physics", label: "物理" },
+  { id: "chemistry", label: "化学" },
+  { id: "politics", label: "政治" },
+  { id: "history", label: "历史" },
+  { id: "geography", label: "地理" },
+  { id: "biology", label: "生物" },
+  { id: "pe", label: "体育" },
+  { id: "information_technology", label: "信息技术" },
+  { id: "music", label: "音乐" },
+  { id: "art", label: "美术" },
+  { id: "psychology", label: "心理" },
+  { id: "comprehensive_practice", label: "综合实践" },
+  { id: "other", label: "其他" },
+] as const
+
+export const SUBJECT_LABELS = SUBJECTS.reduce((acc, s) => {
+  acc[s.id] = s.label
+  return acc
+}, {} as Record<string, string>)
+```
+
+## 路由规则
+
+| 路由 | 说明 |
+|------|------|
+| / | 首页 |
+| /courses | 课程列表 |
+| /courses/[id] | 课程详情（使用 course.id） |
+| /teachers | 教师列表 |
+| /teachers/[id] | 教师详情（使用 teacher.id） |
+| /review/new | 提交评价 |
+| /review/new?teacherId=xxx | 提交评价（预选教师） |
+| /my-reviews | 我的评价 |
+| /admin | 后台首页 |
+| /admin/reviews | 评价审核 |
+| /admin/reports | 举报处理 |
+| /admin/teachers | 教师管理 |
+| /admin/courses | 课程管理 |
+
 ## 角色显示文案
 
 | 内部值 | 显示文案 |

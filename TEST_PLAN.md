@@ -49,6 +49,114 @@
 
 ---
 
+## Phase 1 最终验收记录
+
+**验收时间**: 2026-05-15  
+**验收结论**: ✅ **Phase 1 前端 Mock Web App 全站最终验收通过**
+
+### 一、构建与运行
+
+- [x] npm run build 通过
+- [x] 无 TypeScript 错误
+- [x] 无 import 路径错误
+- [x] 13 个页面正常编译
+
+### 二、主路由验收
+
+- [x] / 首页可访问
+- [x] /courses 课程列表可访问
+- [x] /courses/course-1 课程详情可访问
+- [x] /teachers 教师列表可访问
+- [x] /teachers/teacher-1 教师详情可访问
+- [x] /review/new 提交评价可访问
+- [x] /review/new?teacherId=teacher-1 带参数可访问
+- [x] /my-reviews 我的评价可访问
+- [x] /admin 后台首页可访问
+- [x] /admin/reviews 审核页面可访问
+- [x] /admin/reports 举报页面可访问
+- [x] /admin/teachers 教师管理可访问
+- [x] /admin/courses 课程管理可访问
+
+### 三、课程系统验收
+
+- [x] 课程列表可访问
+- [x] 课程详情页不 404
+- [x] 课程卡片不显示星级评分
+- [x] 课程详情页不显示「写评价」按钮
+- [x] 课程详情页显示授课教师入口
+- [x] 课程详情页只显示 approved 且未删除的评价
+
+### 四、教师系统验收
+
+- [x] 教师列表可访问
+- [x] 教师详情页可访问
+- [x] 教师详情页显示「写评价」按钮
+- [x] 点击写评价进入 /review/new?teacherId=xxx
+- [x] /review/new 可以根据 teacherId 自动预选教师
+- [x] 预选教师后课程选择器只显示该教师教授的课程
+
+### 五、提交评价验收
+
+- [x] 课程选择器可用
+- [x] 教师选择器可用
+- [x] 评分星星可点击
+- [x] 点击星星后数字立即更新
+- [x] 提交评价后状态为 pending / 待审核
+- [x] 提交后进入 /my-reviews
+
+### 六、我的评价验收
+
+- [x] 可以显示当前用户自己的评价
+- [x] pending / approved / rejected 显示为中文
+- [x] 可以删除自己的评价
+- [x] 删除前有确认提示
+- [x] 删除采用软删除 is_deleted / deleted_at / deleted_by
+- [x] 删除后的评价不出现在各页面
+
+### 七、后台验收
+
+- [x] student 不能访问后台
+- [x] moderator 可以审核评价和处理举报
+- [x] admin 可以访问全部后台页面
+- [x] /admin/reviews 可以通过/拒绝评价
+- [x] reject 必须有拒绝原因
+- [x] /admin/reports 可以处理举报
+- [x] /admin/teachers 可访问
+- [x] /admin/courses 可访问
+
+### 八、角色与中文文案验收
+
+- [x] admin 显示为 管理员
+- [x] moderator 显示为 审核员
+- [x] student 显示为 学生
+- [x] pending 显示为 待审核
+- [x] approved 显示为 已通过
+- [x] rejected 显示为 已拒绝
+- [x] UI 中不直接显示裸英文状态值
+
+### 九、科目列表验收
+
+- [x] 支持 16 个科目
+- [x] 科目名称不带"初中"前缀
+- [x] /courses 显示科目正确
+- [x] /review/new 显示科目正确
+- [x] /admin/courses 显示科目正确
+- [x] 首页科目入口显示正确
+- [x] 课程详情页显示科目正确
+
+### 十、样式验收
+
+- [x] Tailwind 样式正常加载
+- [x] 页面没有退回原生 HTML 样式
+- [x] Navbar 样式正常
+- [x] 首页样式正常
+- [x] 课程页样式正常
+- [x] 教师页样式正常
+- [x] 评价页样式正常
+- [x] 后台页样式正常
+
+---
+
 ## 首页验收
 
 ### 检查项
