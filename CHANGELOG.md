@@ -2,6 +2,35 @@
 
 所有重要的项目变更都会记录在此文档。
 
+## [v1.5.0] - 2026-05-16
+
+### 新增
+
+- Phase 2.0 backend planning docs added
+- PHASE2_BACKEND_PLAN.md：完整的 Phase 2 技术方案文档
+- Phase 2 技术架构草案（TECH_ARCH.md）
+- Phase 2 产品目标章节（PRD.md）
+- Phase 2 TODO 列表（TODO.md）
+- Phase 2 测试计划（TEST_PLAN.md）
+
+### Phase 2 技术方案内容
+
+- 数据表设计：profiles, teachers, courses, course_teachers, reviews, reports
+- 用户角色设计：student, moderator, admin 权限边界
+- RLS 权限策略设计
+- 审核流设计
+- Mock 到 Supabase 六阶段迁移策略
+- 风险清单
+- 验收标准
+
+### 已知限制
+
+- 本版本仍为 Phase 1 前端 Mock 版，不包含真实后端
+- 数据存储在内存中，页面刷新后重置
+- 用户系统为模拟，无真实认证
+
+---
+
 ## [v1.4.0] - 2026-05-15
 
 ### 新增

@@ -249,3 +249,57 @@ Phase 2 接入时需要：
 7. 添加实时订阅（可选）
 
 详见 [PRD.md](./PRD.md) Phase 2 规划。
+
+---
+
+## Phase 2 Backend Architecture
+
+### 技术栈
+
+| 类别 | 技术 | 说明 |
+|------|------|------|
+| 认证 | Supabase Auth | Email/Password + 邀请码 |
+| 数据库 | Supabase Postgres | 关系型数据库 |
+| 权限控制 | Row Level Security (RLS) | 数据库级别权限 |
+| 前端 | Next.js 14 | 保持不变 |
+
+### Supabase 数据库 Schema
+
+详见 [PHASE2_BACKEND_PLAN.md](./PHASE2_BACKEND_PLAN.md)。
+
+#### 表结构概览
+
+```
+profiles          # 用户表
+teachers          # 教师表
+courses           # 课程表
+course_teachers   # 课程-教师关联表
+reviews           # 评价表
+reports           # 举报表
+```
+
+### RLS 策略
+
+| 表 | 公开读 | 写入权限 |
+|----|--------|----------|
+| profiles | 所有人 | 只能修改自己 |
+| teachers | 所有人（is_active=true） | 仅 admin |
+| courses | 所有人（is_active=true） | 仅 admin |
+| course_teachers | 所有人 | 仅 admin |
+| reviews | approved 且未删除 | 仅创建者可修改，moderator 可审核 |
+| reports | 仅举报者和管理员 | 举报者可创建，moderator 可处理 |
+
+### 迁移策略
+
+分 6 个阶段逐步从 Mock 迁移到 Supabase：
+
+| 阶段 | 目标 |
+|------|------|
+| 2.1 | 创建 Supabase schema |
+| 2.2 | 接入 Supabase client（只读） |
+| 2.3 | 接入 review 提交 |
+| 2.4 | 接入审核流 |
+| 2.5 | 启用 RLS 和权限控制 |
+| 2.6 | 清理 Mock fallback |
+
+详见 [PHASE2_BACKEND_PLAN.md](./PHASE2_BACKEND_PLAN.md)。

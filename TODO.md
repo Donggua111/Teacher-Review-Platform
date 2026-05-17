@@ -21,7 +21,7 @@
 - [x] 全站回归验收
 - [x] Phase 1 最终验收通过
 
-## P1: 中优先级
+## P2: 低优先级
 
 - [ ] 组件拆分
   - [ ] 从 page.tsx 中拆分出业务组件
@@ -36,16 +36,57 @@
 - [ ] 后台页面样式统一
 - [ ] 表单体验优化
 
-## P2: 低优先级
+---
 
-- [ ] Supabase 接入准备
-  - [ ] 数据库表结构设计
-  - [ ] RLS (Row Level Security) 策略设计
-  - [ ] 邀请码注册流程设计
-- [ ] 部署上线准备
-- [ ] 邀请码注册
-- [ ] 真实登录系统
-- [ ] 数据持久化
+## Phase 2: Supabase Backend
+
+### P0: 数据模型和权限
+
+- [ ] 设计 Supabase 数据库表结构
+  - [ ] profiles 表
+  - [ ] teachers 表
+  - [ ] courses 表
+  - [ ] course_teachers 表
+  - [ ] reviews 表
+  - [ ] reports 表
+- [ ] 设计 RLS 权限策略
+  - [ ] profiles 权限
+  - [ ] teachers/courses 权限
+  - [ ] reviews 权限
+  - [ ] reports 权限
+- [ ] 创建 Supabase 项目
+- [ ] 执行数据库 schema
+- [ ] 验证 RLS 策略
+
+### P1: Supabase 接入
+
+- [ ] 安装 @supabase/supabase-js
+- [ ] 创建 src/lib/supabase.ts 客户端
+- [ ] 创建 .env.local.example
+- [ ] 接入 courses/teachers 只读
+- [ ] 保留 Mock fallback
+
+### P2: 审核流
+
+- [ ] 接入 review 提交到 Supabase
+- [ ] 接入审核操作（approve/reject）
+- [ ] 审核状态流转逻辑
+- [ ] 拒绝原因记录
+
+### P3: 管理端真实化
+
+- [ ] admin 管理教师数据
+- [ ] admin 管理课程数据
+- [ ] admin 管理 course_teachers 关联
+- [ ] 邀请码注册机制
+
+### P4: 部署与安全
+
+- [ ] 环境变量配置
+- [ ] .gitignore 检查
+- [ ] RLS 策略测试
+- [ ] 生产环境部署
+- [ ] 监控和日志配置
 
 ---
 
@@ -58,7 +99,7 @@
 | v1.2.0 | 状态管理整理和文档更新 | 已完成 |
 | v1.3.0 | 科目扩展和 UI 优化 | 已完成 |
 | v1.4.0 | Phase 1 最终验收通过 | 已完成 |
-| v1.5.0 | 组件拆分 | 待开始 |
+| v1.5.0 | Phase 2 技术方案设计 | 已完成 |
 | v2.0.0 | Supabase 接入 | 待开始 |
 
 ---
