@@ -413,6 +413,30 @@ npm run build
 
 **目标**：验证 Supabase 数据库表结构正确创建
 
+**Phase 2.1-A 本地文件验收**：
+
+- [x] supabase/schema.sql 存在
+- [x] supabase/seed_mock.sql 存在
+- [x] supabase/README.md 存在
+- [x] schema.sql 包含 6 张核心表
+  - [x] profiles 表
+  - [x] teachers 表
+  - [x] courses 表
+  - [x] course_teachers 表
+  - [x] reviews 表
+  - [x] reports 表
+- [x] RLS policy 有基础定义
+  - [x] profiles policies
+  - [x] teachers policies
+  - [x] courses policies
+  - [x] course_teachers policies
+  - [x] reviews policies
+  - [x] reports policies
+- [x] seed_mock.sql 只使用虚构数据
+- [x] npm run build 通过
+
+**Phase 2.1-B Supabase 执行验收**：
+
 - [ ] Supabase 项目创建成功
 - [ ] profiles 表创建，RLS 策略正确
 - [ ] teachers 表创建，RLS 策略正确
@@ -420,6 +444,7 @@ npm run build
 - [ ] course_teachers 表创建，RLS 策略正确
 - [ ] reviews 表创建，RLS 策略正确
 - [ ] reports 表创建，RLS 策略正确
+- [ ] Helper functions 正常工作
 - [ ] 无数据泄露风险
 
 ### Phase 2.2: Supabase Client 接入验收

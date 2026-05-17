@@ -42,21 +42,27 @@
 
 ### P0: 数据模型和权限
 
-- [ ] 设计 Supabase 数据库表结构
-  - [ ] profiles 表
-  - [ ] teachers 表
-  - [ ] courses 表
-  - [ ] course_teachers 表
-  - [ ] reviews 表
-  - [ ] reports 表
-- [ ] 设计 RLS 权限策略
-  - [ ] profiles 权限
-  - [ ] teachers/courses 权限
-  - [ ] reviews 权限
-  - [ ] reports 权限
-- [ ] 创建 Supabase 项目
+- [x] 设计 Supabase 数据库表结构 ✅ Phase 2.1-A
+  - [x] profiles 表
+  - [x] teachers 表
+  - [x] courses 表
+  - [x] course_teachers 表
+  - [x] reviews 表
+  - [x] reports 表
+- [x] 设计 RLS 权限策略 ✅ Phase 2.1-A
+  - [x] profiles 权限
+  - [x] teachers/courses 权限
+  - [x] reviews 权限
+  - [x] reports 权限
+- [ ] 创建 Supabase 项目（在 Supabase Dashboard 执行 schema.sql）
 - [ ] 执行数据库 schema
 - [ ] 验证 RLS 策略
+
+**Phase 2.1-A 完成**：
+- ✅ 已创建 supabase/schema.sql
+- ✅ 已创建 supabase/seed_mock.sql
+- ✅ 已创建 supabase/README.md
+- ⏳ 等待在 Supabase Dashboard 中执行
 
 ### P1: Supabase 接入
 

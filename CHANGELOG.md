@@ -2,6 +2,38 @@
 
 所有重要的项目变更都会记录在此文档。
 
+## [Unreleased] - Phase 2.1-A
+
+### 新增
+
+- supabase/schema.sql：完整 Supabase 数据库 Schema
+  - 6 张核心表：profiles, teachers, courses, course_teachers, reviews, reports
+  - updated_at 自动更新 Trigger
+  - Row Level Security (RLS) 策略
+  - Helper Functions（角色判断）
+  - 索引优化
+- supabase/seed_mock.sql：开发用 Mock 数据
+  - 4 位虚构教师
+  - 5 门虚构课程
+  - 课程-教师关联
+  - 4 个用户（student/moderator/admin）
+  - 少量评价（approved/pending/rejected）
+  - 1 条已处理的举报
+- supabase/README.md：数据库文件说明文档
+
+### 变更
+
+- TODO.md：更新 Phase 2 P0 任务状态
+- TEST_PLAN.md：增加 Phase 2.1-A 本地文件验收清单
+
+### 已知限制
+
+- 本版本仍为 Phase 1 前端 Mock 版
+- Schema 文件仅本地创建，尚未在 Supabase 中执行
+- 前端仍使用 Mock Data
+
+---
+
 ## [v1.5.0] - 2026-05-16
 
 ### 新增
