@@ -45,12 +45,33 @@ supabase/
 
 ## 当前阶段
 
-**Phase 2.1-A：数据库 Schema 创建**
+**Phase 2.1-B：Supabase Schema 执行完成**
 
-本目录的文件目前仅用于：
-1. 本地开发参考
-2. 在 Supabase Dashboard 中执行
-3. 团队共享数据库结构
+### 执行状态
+
+| 项目 | 状态 | 说明 |
+|------|------|------|
+| 创建 Supabase 项目 | ✅ 已完成 | Teacher Review Platform |
+| schema.sql 执行 | ✅ 已完成 | 6 张核心表已创建 |
+| RLS policies | ✅ 已启用 | 所有表的 rowsecurity 已开启 |
+| seed_mock.sql 执行 | ⏳ 待执行 | 等待 Phase 2.1-C |
+| 前端接入 | ⏳ 待接入 | 等待 Phase 2.2 |
+
+### 已验证的表结构
+
+- ✅ profiles
+- ✅ teachers
+- ✅ courses
+- ✅ course_teachers
+- ✅ reviews
+- ✅ reports
+
+### 下一步计划
+
+1. **Phase 2.1-C**：执行 seed_mock.sql（开发环境测试数据）
+2. **Phase 2.2**：接入 Supabase Client（只读 courses/teachers）
+3. **Phase 2.3**：接入评价提交
+4. **Phase 2.4**：接入审核流
 
 **尚未接入前端**，前端仍使用 Mock Data。
 

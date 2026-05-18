@@ -437,15 +437,24 @@ npm run build
 
 **Phase 2.1-B Supabase 执行验收**：
 
-- [ ] Supabase 项目创建成功
-- [ ] profiles 表创建，RLS 策略正确
-- [ ] teachers 表创建，RLS 策略正确
-- [ ] courses 表创建，RLS 策略正确
-- [ ] course_teachers 表创建，RLS 策略正确
-- [ ] reviews 表创建，RLS 策略正确
-- [ ] reports 表创建，RLS 策略正确
-- [ ] Helper functions 正常工作
-- [ ] 无数据泄露风险
+- [x] Supabase 项目创建成功（Teacher Review Platform）
+- [x] profiles 表创建，RLS 策略正确
+- [x] teachers 表创建，RLS 策略正确
+- [x] courses 表创建，RLS 策略正确
+- [x] course_teachers 表创建，RLS 策略正确
+- [x] reviews 表创建，RLS 策略正确
+- [x] reports 表创建，RLS 策略正确
+- [x] Helper functions 正常工作
+- [x] rowsecurity 已开启
+- [x] 无数据泄露风险
+
+**Phase 2.1-B 验收记录**：
+- ✅ 执行时间：2026-05-18
+- ✅ schema.sql 执行结果：Success. No rows returned
+- ✅ 6 张核心表已确认存在
+- ✅ RLS policies 已确认存在
+- ✅ seed_mock.sql 尚未执行（等待 Phase 2.1-C）
+- ✅ 前端尚未接入（等待 Phase 2.2）
 
 ### Phase 2.2: Supabase Client 接入验收
 

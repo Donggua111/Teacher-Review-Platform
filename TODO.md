@@ -54,15 +54,22 @@
   - [x] teachers/courses 权限
   - [x] reviews 权限
   - [x] reports 权限
-- [ ] 创建 Supabase 项目（在 Supabase Dashboard 执行 schema.sql）
-- [ ] 执行数据库 schema
-- [ ] 验证 RLS 策略
+- [x] 创建 Supabase 项目（在 Supabase Dashboard 执行 schema.sql） ✅ Phase 2.1-B
+- [x] 执行数据库 schema ✅ Phase 2.1-B
+- [x] 验证 RLS 策略 ✅ Phase 2.1-B
 
 **Phase 2.1-A 完成**：
 - ✅ 已创建 supabase/schema.sql
 - ✅ 已创建 supabase/seed_mock.sql
 - ✅ 已创建 supabase/README.md
-- ⏳ 等待在 Supabase Dashboard 中执行
+
+**Phase 2.1-B 完成**：
+- ✅ 创建 Supabase 项目：Teacher Review Platform
+- ✅ schema.sql 在 Supabase Dashboard 成功执行
+- ✅ 6 张核心表已创建
+- ✅ RLS policies 已创建并启用
+- ⏳ seed_mock.sql 尚未执行
+- ⏳ 前端尚未接入 Supabase
 
 ### P1: Supabase 接入
 

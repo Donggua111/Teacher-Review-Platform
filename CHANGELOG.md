@@ -2,35 +2,33 @@
 
 所有重要的项目变更都会记录在此文档。
 
-## [Unreleased] - Phase 2.1-A
+## [Unreleased] - Phase 2.1-B
 
 ### 新增
 
-- supabase/schema.sql：完整 Supabase 数据库 Schema
-  - 6 张核心表：profiles, teachers, courses, course_teachers, reviews, reports
-  - updated_at 自动更新 Trigger
-  - Row Level Security (RLS) 策略
-  - Helper Functions（角色判断）
-  - 索引优化
-- supabase/seed_mock.sql：开发用 Mock 数据
-  - 4 位虚构教师
-  - 5 门虚构课程
-  - 课程-教师关联
-  - 4 个用户（student/moderator/admin）
-  - 少量评价（approved/pending/rejected）
-  - 1 条已处理的举报
-- supabase/README.md：数据库文件说明文档
+- Phase 2.1-A：创建本地 Supabase schema 文件
+  - supabase/schema.sql：完整数据库 Schema（6 张表 + RLS + Helper Functions）
+  - supabase/seed_mock.sql：开发用 Mock 数据
+  - supabase/README.md：数据库文件说明文档
+
+- Phase 2.1-B：Supabase 项目创建与 schema 执行
+  - ✅ 创建 Supabase 项目：Teacher Review Platform
+  - ✅ schema.sql 在 Supabase Dashboard 成功执行
+  - ✅ 6 张核心表已创建（profiles, teachers, courses, course_teachers, reviews, reports）
+  - ✅ RLS policies 已创建并启用
+  - ✅ rowsecurity 已开启
 
 ### 变更
 
-- TODO.md：更新 Phase 2 P0 任务状态
-- TEST_PLAN.md：增加 Phase 2.1-A 本地文件验收清单
+- TODO.md：更新 Phase 2 P0 任务状态（标记 Phase 2.1-B 完成）
+- TEST_PLAN.md：增加 Phase 2.1-B 验收记录
 
 ### 已知限制
 
 - 本版本仍为 Phase 1 前端 Mock 版
-- Schema 文件仅本地创建，尚未在 Supabase 中执行
-- 前端仍使用 Mock Data
+- seed_mock.sql 尚未执行（等待 Phase 2.1-C）
+- 前端尚未接入 Supabase（等待 Phase 2.2）
+- 无真实认证系统
 
 ---
 
