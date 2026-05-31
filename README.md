@@ -176,3 +176,200 @@ Phase 2 将实现完整 Web App，包括：
 ## 📄 开源协议
 
 MIT License
+
+---
+
+# English Version
+
+## Course and Teacher Review Platform
+
+A web-based course feedback platform designed for students to share and browse authentic classroom experiences, providing objective references for future students.
+
+---
+
+## 📋 Project Positioning
+
+This project is a **Course and Teacher Review Web Application**. It is not a mobile app, mini-program, desktop application, or browser extension.
+
+## 📍 Current Stage: Phase 1 Mock Frontend
+
+This project is currently in **Phase 1: Frontend Prototype**, with **core functionality completed and passed final acceptance**.
+
+> **Important Notice:**
+> - This is currently a **mock frontend prototype**
+> - There is **no real login system** implemented yet
+> - There is **no real production database** connected to the frontend yet
+> - **No real school, teacher, or student data** is used - all data is mock data
+> - Review content should be **moderated before public display**
+> - This project is **not designed as an anonymous attack platform** or teacher ranking system
+
+### Phase 1 Completed Goals
+
+- ✅ Rapidly validate product prototype and core interaction flows
+- ✅ Complete evaluation, review, and reporting workflows
+- ✅ Verify permission control logic
+- ✅ Prepare frontend architecture for Phase 2
+
+---
+
+## 🛠️ Tech Stack
+
+| Category | Technology | Version |
+|----------|------------|---------|
+| Framework | Next.js | 14 (App Router) |
+| Language | TypeScript | 5.x |
+| Styling | Tailwind CSS | 3.x |
+| Component Library | shadcn/ui | latest |
+| Icons | Lucide React | latest |
+| State Management | React Context | - |
+| Data Storage | Mock Data (in-memory) | - |
+
+---
+
+## 🎯 Core Features
+
+### Implemented Features
+
+1. **Course Browsing System**
+   - 16 subject categories (Chinese, Math, English, Physics, Chemistry, Politics, History, Geography, Biology, PE, IT, Music, Art, Psychology, Comprehensive Practice, Other)
+   - Course list browsable by subject
+   - Course details showing course info, instructor, and approved reviews
+
+2. **Teacher Information System**
+   - Teacher list with rating summaries
+   - Teacher details showing courses taught and student reviews
+   - Review submission accessible from teacher detail page
+
+3. **Review Submission System**
+   - Multi-dimensional ratings (overall, difficulty, workload, exam pressure, clarity, helpfulness, fairness, recommendation)
+   - Tag selection + text review
+   - Support for pre-selecting teacher via URL parameter
+   - Submission status defaults to pending
+
+4. **My Reviews**
+   - View all reviews by current user
+   - Status displayed in Chinese (待审核/已通过/已拒绝)
+   - Support for soft-deleting own reviews
+
+5. **Admin Dashboard**
+   - Review moderation (approve/reject with reason required for rejection)
+   - Report handling
+   - Teacher/Course management
+
+6. **Permission Simulation**
+   - Role switcher: Student / Moderator / Admin
+   - Role-based permission isolation
+
+---
+
+## 📄 Page Structure
+
+```
+/                              # Homepage
+├── /courses                   # Course list
+│   └── /courses/[id]         # Course details
+├── /teachers                  # Teacher list
+│   └── /teachers/[id]        # Teacher details
+├── /review/new                # Review submission form
+├── /my-reviews                # My reviews
+└── /admin                     # Admin dashboard
+    ├── /admin                 # Dashboard overview
+    ├── /admin/reviews         # Review moderation
+    ├── /admin/reports         # Report handling
+    ├── /admin/teachers        # Teacher management
+    └── /admin/courses         # Course management
+```
+
+---
+
+## 🔒 Permission说明
+
+| Role | Permissions |
+|------|-------------|
+| **Student** | Browse reviews, submit reviews, report reviews, view/delete own reviews |
+| **Moderator** | Moderate reviews, handle reports |
+| **Admin** | All permissions + teacher/course management |
+
+---
+
+## ⚠️ Safety Boundaries
+
+This platform is committed to building a healthy feedback environment:
+
+- **Not an Anonymous Attack Platform**: Reviews must be moderated before public display
+- **Not a Ranking System**: No teacher rankings, red/black lists; focus on objective feedback
+- **Structured Feedback**: Reviews use multi-dimensional ratings + tags + text for easier moderation and reference
+
+---
+
+## 🚀 Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+Visit http://localhost:3000
+
+---
+
+## 📝 Mock Limitations
+
+| Feature | Limitation |
+|---------|------------|
+| User System | Uses preset users, no real authentication |
+| Data Storage | Data resets after page refresh |
+| Review Submission | Status directly becomes pending, no real sending |
+| Report Handling | Only changes status, no real notifications |
+| Teacher Management | Only toggles is_active status |
+| Course Management | Only toggles is_active status |
+
+---
+
+## 📅 Phase 2 Plan
+
+Phase 2 will implement a complete Web App including:
+
+- ✅ Real user authentication (Supabase Auth)
+- ✅ Invitation code registration
+- ✅ Real Supabase database
+- ✅ Real review moderation workflow and RLS permission control
+- ✅ Report handling and notification mechanisms
+- ✅ Deployment and limited user testing
+
+### Supabase Backend Progress
+
+| Phase | Status |
+|-------|--------|
+| 2.1-A | ✅ Schema design completed (local files) |
+| 2.1-B | ✅ Supabase project created, schema.sql executed |
+| 2.1-C | ⏳ Mock seed data execution pending |
+| 2.2 | ⏳ Supabase Client integration pending |
+| 2.3+ | ⏳ Not started |
+
+**Current Status**: Backend schema has been prepared and executed. Frontend runtime integration with Supabase **has not started yet**.
+
+---
+
+## 📚 Project Documentation
+
+- [README.md](./README.md) - This file
+- [PRD.md](./PRD.md) - Product Requirements Document
+- [TECH_ARCH.md](./TECH_ARCH.md) - Technical Architecture Document
+- [PHASE2_BACKEND_PLAN.md](./PHASE2_BACKEND_PLAN.md) - Phase 2 Backend Planning
+- [TEST_PLAN.md](./TEST_PLAN.md) - Test Acceptance Plan
+- [CHANGELOG.md](./CHANGELOG.md) - Changelog
+- [TODO.md](./TODO.md) - TODO List
+- [AI_DEV_RULES.md](./AI_DEV_RULES.md) - AI Development Rules
+
+---
+
+## 📄 License
+
+MIT License
